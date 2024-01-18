@@ -13,4 +13,5 @@ let port = process.env.PORT || 3003;
 server.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
+module.exports = app;
 //# sourceMappingURL=app.js.map
