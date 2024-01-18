@@ -17,9 +17,7 @@ router.get("/users-list", async (req: Request, res: Response) => {
     let dataJson = fs.readFileSync(
       path.join(__dirname, "../customers.json"),
       "utf8"
-    );
-    console.log("hi");
-    
+    );    
     const currentUsers = JSON.parse(dataJson);
     return res.status(200).json(currentUsers);
   } catch (err) {
