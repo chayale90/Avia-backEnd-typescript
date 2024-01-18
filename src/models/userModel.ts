@@ -21,9 +21,6 @@ export class User {
     this.plan = userProps.plan;
   }
 
-  public getEmail(): string {
-    return this.email;
-  }
 }
 
 exports.User;
