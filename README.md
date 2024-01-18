@@ -11,6 +11,10 @@ Creates a new user and adds them to the system. Requires a JSON payload with the
 - `email` (string): Email address of the user.
 - `phone` (string): Phone number of the user.
 - `plan` (string): Subscription plan for the user (e.g., "basic", "premium").
+
+Example Request:
+
+```json
 {
   "firstname": "John",
   "lastname": "Doe",
@@ -19,20 +23,9 @@ Creates a new user and adds them to the system. Requires a JSON payload with the
   "plan": "basic"
 }
 
-2. Get all users
-   
 GET /api/users
-
 Retrieves a list of all users in the system.
 
-5. Get a specific user
-   
+3. Get a specific user
 GET /api/users/:userEmail
-
 Retrieves details for a specific user identified by their unique userEmail.
-
-Example Request:
-
-http
-Copy code
-GET /api/users/chaya@gmail.com
