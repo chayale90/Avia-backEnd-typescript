@@ -11,10 +11,6 @@ Creates a new user and adds them to the system. Requires a JSON payload with the
 - `email` (string): Email address of the user.
 - `phone` (string): Phone number of the user.
 - `plan` (string): Subscription plan for the user (e.g., "basic", "premium").
-
-Example Request:
-
-```json
 {
   "firstname": "John",
   "lastname": "Doe",
