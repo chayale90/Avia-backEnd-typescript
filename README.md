@@ -2,7 +2,7 @@
 
 ### 1. Create a new user
 
-#### `POST /api/users`
+#### POST /api/users
 
 Creates a new user and adds them to the system. Requires a JSON payload with the following fields:
 
