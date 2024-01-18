@@ -22,8 +22,14 @@ Example Request:
 
 2. Get all users
 GET /api/users
-
 Retrieves a list of all users in the system.
-GET /api/users Retrieves a list of all users in the system. 
 
-4. Get a specific user GET /api/users/:userEmail
+3. Get a specific user
+GET /api/users/:userEmail
+Retrieves details for a specific user identified by their unique userEmail.
+
+Example Request:
+
+http
+Copy code
+GET /api/users/chaya@gmail.com
