@@ -1,26 +1,15 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const userModel_1 = require("../models/userModel");
 const fs = require("fs");
 const express = require("express");
 const path = require("path");
 const router = express.Router();
-const usersJson = require("../customers.json");
-// Check if the router "users" works
+// const usersJson = require("../customers.json");
 router.get("/", (req, res) => {
     res.json({ msg: "users work" });
 });
-// get all users
-router.get("/users-list", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.get("/users-list", async (req, res) => {
     try {
         let dataJson = fs.readFileSync(path.join(__dirname, "../customers.json"), "utf8");
         const currentUsers = JSON.parse(dataJson);
@@ -30,8 +19,8 @@ router.get("/users-list", (req, res) => __awaiter(void 0, void 0, void 0, functi
         console.log(err);
         return res.status(500).json({ msg: "err", err });
     }
-}));
-router.post("/add-user", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+});
+router.post("/add-user", async (req, res) => {
     try {
         const userData = req.body;
         const user = new userModel_1.User(userData);
@@ -51,11 +40,12 @@ router.post("/add-user", (req, res) => __awaiter(void 0, void 0, void 0, functio
         console.log(err);
         return res.status(500).json({ error: "Internal Server Error" });
     }
-}));
-router.get("/user-info/:userEmail", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+});
+router.get("/user-info/:userEmail", async (req, res) => {
     try {
         const { userEmail } = req.params;
-        let userInfo = usersJson.find((user) => user.email === userEmail);
+        let dataJson = fs.readFileSync(path.join(__dirname, "../customers.json"), "utf8");
+        let userInfo = dataJson.find((user) => user.email === userEmail);
         if (!userInfo)
             return res.status(404).json({ message: "User not found" });
         return res.status(200).json(userInfo);
@@ -64,6 +54,6 @@ router.get("/user-info/:userEmail", (req, res) => __awaiter(void 0, void 0, void
         console.log(err);
         return res.status(500).json({ error: "Internal Server Error" });
     }
-}));
+});
 module.exports = router;
 //# sourceMappingURL=users.js.map

@@ -20,7 +20,6 @@ export class User {
     this.email = userProps.email;
     this.plan = userProps.plan;
   }
-
 }
 
 exports.User;
