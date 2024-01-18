@@ -15,13 +15,9 @@ Creates a new user and adds them to the system. Requires a JSON payload with the
 Example Request:
 
 { "firstname": "John",
-
 "lastname": "Doe",
-
 "email": "john.doe@example.com",
-
 "phone": "123-456-7890",
-
 "plan": "basic" } 
 
 2. Get all users
