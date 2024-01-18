@@ -1,6 +1,4 @@
-// user.ts
-
-type UserProps = {
+export type UserProps = {
   firstname: string;
   lastname: string;
   phone: string;
@@ -15,17 +13,17 @@ export class User {
   private email: string;
   private plan: string;
 
-  constructor(userProps:UserProps) {
+  constructor(userProps: UserProps) {
     this.firstname = userProps.firstname;
-    this.lastname =  userProps.lastname;
-    this.phone =  userProps.phone;
-    this.email =  userProps.email;
-    this.plan =  userProps.plan;
+    this.lastname = userProps.lastname;
+    this.phone = userProps.phone;
+    this.email = userProps.email;
+    this.plan = userProps.plan;
   }
-  getEmail(): string {
+
+  public getEmail(): string {
     return this.email;
   }
 }
 
-// Export the User class
 exports.User;
