@@ -14,18 +14,16 @@ Creates a new user and adds them to the system. Requires a JSON payload with the
 
 Example Request:
 
-```json
-{
-  "firstname": "John",
-  "lastname": "Doe",
-  "email": "john.doe@example.com",
-  "phone": "123-456-7890",
-  "plan": "basic"
-}
+{ "firstname": "John",
+"lastname": "Doe",
+"email": "john.doe@example.com",
+"phone": "123-456-7890",
+"plan": "basic" } 
 
+2. Get all users
 GET /api/users
-Retrieves a list of all users in the system.
 
-3. Get a specific user
-GET /api/users/:userEmail
-Retrieves details for a specific user identified by their unique userEmail.
+Retrieves a list of all users in the system.
+GET /api/users Retrieves a list of all users in the system. 
+
+4. Get a specific user GET /api/users/:userEmail
