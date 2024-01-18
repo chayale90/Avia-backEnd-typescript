@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node dist/app.js",
+    "start": "node dist/app.ts",
     "build":"npx tsc",
-    "dev": "nodemon dist/index.js"
+    "dev": "nodemon dist/app.js"
   },
   "keywords": [],
   "author": "",
