@@ -4,8 +4,6 @@ const fs = require("fs");
 const express = require("express");
 const path = require("path");
 const router = express.Router();
-// const usersJson = require("../customers.json");
-
 
 router.get("/", (req: Request, res: Response) => {
   res.json({ msg: "users work" });
